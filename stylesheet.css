@@ -1,0 +1,19 @@
+.divGrid {
+  background-color: aqua;
+  width: 15px;
+  height: 15px;
+
+  padding: 5px;
+  margin: 0px;
+  border: 1px solid black;
+}
+
+.container {
+  max-width: 440px;
+  width: 500px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
