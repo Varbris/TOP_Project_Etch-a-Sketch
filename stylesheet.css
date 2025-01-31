@@ -4,18 +4,36 @@
 }
 
 .divGrid {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 
   padding: 5px;
   margin: 0px;
   border: 1px solid black;
 }
 
+.buttonContainer {
+  width: 500px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+#sizeButton {
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.flex-grow {
+  flex: 1 1 1;
+}
+
 .container {
-  max-width: 440px;
-  margin: 0 auto;
-  padding: 200px;
+  /* max-width: 400px; */
+  margin: auto auto;
+  padding: 20px;
+  padding-left: 600px;
+  padding-right: 600px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
