@@ -4,8 +4,8 @@
 }
 
 .divGrid {
-  width: 20px;
-  height: 20px;
+  width: 4px;
+  height: 4px;
 
   padding: 5px;
   margin: 0px;
@@ -14,7 +14,7 @@
 
 .buttonContainer {
   width: 500px;
-  margin: 10px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
@@ -25,15 +25,15 @@
 }
 
 .flex-grow {
-  flex: 1 1 1;
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
 .container {
   /* max-width: 400px; */
-  margin: auto auto;
+  margin: 10px auto;
   padding: 20px;
-  padding-left: 600px;
-  padding-right: 600px;
+  padding: 0 450px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
