@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const gridContainer = document.querySelector(".grid-container");
 const sizeButton = document.querySelector("#sizeButton");
 
 function generateGrid(userInput = 16) {
@@ -11,7 +11,7 @@ function generateGrid(userInput = 16) {
     const square = document.createElement("div");
     square.classList.add("divGrid");
 
-    container.appendChild(square);
+    gridContainer.appendChild(square);
 
     square.addEventListener("mouseover", function (e) {
       e.target.style.backgroundColor = "#" + randomColor;

@@ -6,7 +6,8 @@
 .divGrid {
   border: 1px solid black;
   width: 60px;
-  display: inline;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .buttonContainer {
@@ -21,15 +22,17 @@
   padding-right: 30px;
 }
 
-.flex-grow {
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-
-.container {
+.grid-container {
   height: 960px;
   width: 960px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+}
+
+main {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
