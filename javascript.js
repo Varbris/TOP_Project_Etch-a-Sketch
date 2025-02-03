@@ -26,9 +26,11 @@ sizeButton.addEventListener("click", function () {
   let userInput = prompt("What size do you want ? (pick a number < 100)");
   if (userInput > 100) {
     alert("Your pc will lag if you do that");
+    generateGrid();
     return 0;
   } else {
     container.innerHTML = "";
     generateGrid(userInput);
   }
+  generateGrid();
 });
