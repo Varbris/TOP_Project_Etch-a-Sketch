@@ -1,3 +1,6 @@
+const container = document.querySelector(".container");
+const sizeButton = document.querySelector("#sizeButton");
+
 function generateGrid(userInput = 16) {
   let gridSize_x = userInput;
   let gridSize_y = userInput;
@@ -5,11 +8,12 @@ function generateGrid(userInput = 16) {
 
   for (let i = 0; i < gridSize; i++) {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    const div = document.createElement("div");
-    div.classList.add("divGrid");
-    div.classList.add("flex-grow");
-    container.appendChild(div);
-    div.addEventListener("mouseover", function (e) {
+    const square = document.createElement("div");
+    square.classList.add("divGrid");
+
+    container.appendChild(square);
+
+    square.addEventListener("mouseover", function (e) {
       e.target.style.backgroundColor = "#" + randomColor;
       setTimeout(function () {
         e.target.style.backgroundColor = "";
@@ -18,8 +22,6 @@ function generateGrid(userInput = 16) {
   }
 }
 
-const container = document.querySelector(".container");
-const sizeButton = document.querySelector("#sizeButton");
 generateGrid();
 
 sizeButton.addEventListener("click", function () {
