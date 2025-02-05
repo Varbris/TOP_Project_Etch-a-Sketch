@@ -38,6 +38,7 @@ function generateGrid(userInput = 16) {
 function checkUserInput(userInput) {
   if (userInput > 100) {
     alert("Your pc will lag if you do that");
+    gridContainer.innerHTML = "";
     generateGrid();
     return 0;
   } else {
