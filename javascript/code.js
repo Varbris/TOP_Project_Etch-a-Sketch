@@ -9,12 +9,17 @@ function getContainerWidth(element, property) {
   return containerWidth;
 }
 
+function getRandomColor() {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+  return randomColor;
+}
+
 function generateGrid(userInput = 16) {
   let gridSize = parseInt(userInput * userInput);
   const gridContainerWidth = getContainerWidth(gridContainer, "width");
-  console.log(gridContainerWidth);
+
   for (let i = 0; i < gridSize; i++) {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const square = document.createElement("div");
     square.classList.add("divGrid");
     square.style.flexBasis = `${gridContainerWidth / userInput}px`;
@@ -22,7 +27,7 @@ function generateGrid(userInput = 16) {
     gridContainer.appendChild(square);
 
     square.addEventListener("mouseover", function (e) {
-      e.target.style.backgroundColor = "#" + randomColor;
+      e.target.style.backgroundColor = "#" + getRandomColor();
       setTimeout(function () {
         e.target.style.backgroundColor = "";
       }, 300);
