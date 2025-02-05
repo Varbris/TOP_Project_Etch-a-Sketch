@@ -1,15 +1,23 @@
 const gridContainer = document.querySelector(".grid-container");
 const sizeButton = document.querySelector("#sizeButton");
-const gridContainerSize = 960;
+
+function getContainerWidth(element, property) {
+  const getContainerStyle = window.getComputedStyle(element);
+  const getContainerStyleValue = getContainerStyle.getPropertyValue(property);
+  const containerWidth = parseInt(getContainerStyleValue.replace("px", ""));
+
+  return containerWidth;
+}
 
 function generateGrid(userInput = 16) {
   let gridSize = parseInt(userInput * userInput);
-
+  const gridContainerWidth = getContainerWidth(gridContainer, "width");
+  console.log(gridContainerWidth);
   for (let i = 0; i < gridSize; i++) {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const square = document.createElement("div");
     square.classList.add("divGrid");
-    square.style.flexBasis = `${gridContainerSize / userInput}px`;
+    square.style.flexBasis = `${gridContainerWidth / userInput}px`;
 
     gridContainer.appendChild(square);
 
