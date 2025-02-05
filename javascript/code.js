@@ -23,9 +23,9 @@ function generateGrid(userInput = 16) {
     const square = document.createElement("div");
     square.classList.add("divGrid");
     square.style.flexBasis = `${gridContainerWidth / userInput}px`;
-
     gridContainer.appendChild(square);
 
+    //event
     square.addEventListener("mouseover", function (e) {
       e.target.style.backgroundColor = "#" + getRandomColor();
       setTimeout(function () {
@@ -35,8 +35,7 @@ function generateGrid(userInput = 16) {
   }
 }
 
-sizeButton.addEventListener("click", function () {
-  let userInput = prompt("What size do you want ? (pick a number < 100)");
+function checkUserInput(userInput) {
   if (userInput > 100) {
     alert("Your pc will lag if you do that");
     generateGrid();
@@ -45,6 +44,13 @@ sizeButton.addEventListener("click", function () {
     gridContainer.innerHTML = "";
     generateGrid(userInput);
   }
-});
+}
 
-generateGrid();
+document.addEventListener("DOMContentLoaded", function () {
+  sizeButton.addEventListener("click", function () {
+    let userInput = prompt("What size do you want ? (pick a number < 100)");
+    checkUserInput(userInput);
+  });
+
+  generateGrid();
+});
