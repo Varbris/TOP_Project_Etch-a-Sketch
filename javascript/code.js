@@ -1,15 +1,15 @@
 const gridContainer = document.querySelector(".grid-container");
 const sizeButton = document.querySelector("#sizeButton");
+const gridContainerSize = 960;
 
 function generateGrid(userInput = 16) {
-  let gridSize_x = userInput;
-  let gridSize_y = userInput;
-  let gridSize = gridSize_x * gridSize_y;
+  let gridSize = parseInt(userInput * userInput);
 
   for (let i = 0; i < gridSize; i++) {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const square = document.createElement("div");
     square.classList.add("divGrid");
+    square.style.flexBasis = `${gridContainerSize / userInput}px`;
 
     gridContainer.appendChild(square);
 
@@ -22,8 +22,6 @@ function generateGrid(userInput = 16) {
   }
 }
 
-generateGrid();
-
 sizeButton.addEventListener("click", function () {
   let userInput = prompt("What size do you want ? (pick a number < 100)");
   if (userInput > 100) {
@@ -31,8 +29,9 @@ sizeButton.addEventListener("click", function () {
     generateGrid();
     return 0;
   } else {
-    container.innerHTML = "";
+    gridContainer.innerHTML = "";
     generateGrid(userInput);
   }
-  generateGrid();
 });
+
+generateGrid();
